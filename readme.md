@@ -1,1 +1,2 @@
 [![Build Status](https://app.travis-ci.com/Vitalijvictor/testing.svg?branch=master)](https://app.travis-ci.com/Vitalijvictor/testing)
+[![codecov](https://codecov.io/gh/Vitalijvictor/testing/branch/master/graph/badge.svg?token=I3MIFIMSWZ)](https://codecov.io/gh/Vitalijvictor/testing)
