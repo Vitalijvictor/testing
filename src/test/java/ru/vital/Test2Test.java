@@ -6,10 +6,9 @@ import org.junit.Test;
 import static ru.vital.Test2.name1;
 import static ru.vital.Test2.name2;
 
-public class Test2Test{
-
+public class Test2Test {
     @Test
-    public void check_c() {
+    public void checkC() {
         Test2 test2 = new Test2();
         int expected = 2 + 3;
         int rsl = test2.aAndB();
