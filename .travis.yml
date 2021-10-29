@@ -17,3 +17,9 @@ recipients:
   - vitalijvictor@gmail.com
 on_success: never # default: change
 on_failure: always # default: always
+
+env:
+
+  global:
+
+    - CODECOV_TOKEN="5ec78188-021d-4bcb-8eb6-5b94383b34ec"
