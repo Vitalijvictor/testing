@@ -43,6 +43,20 @@ public class Test2 {
     public static String name1 = "John";
     public static String name2 = "Inga";
 
+    public static String checkNull(String check1, String check2) {
+        String containsO = "These words contain letter O";
+        String dontContainsO = "These words don't contain letter A";
+
+        if (check1.contains("o")) {
+            return null;
+        }
+        if (check2.contains("a")) {
+            return containsO;
+        } else {
+            return dontContainsO;
+        }
+    }
+
     public static void main(String[] args) {
         Test2.aAndB();
         Test2.array1();

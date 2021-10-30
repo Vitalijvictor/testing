@@ -3,6 +3,8 @@ package ru.vital;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 import static ru.vital.Test2.name1;
 import static ru.vital.Test2.name2;
 
@@ -59,5 +61,18 @@ public class Test2Test {
     @Test
     public void name1AndName2NotNull() {
         Assert.assertNotNull(name1, name2);
+    }
+
+    @Test
+    public void name1AndName2NotNull2() {
+        assertThat(name1.length(), is(name2.length()));
+    }
+
+    @Test
+    public void containsCheckAandO() {
+        Test2 test2 = new Test2();
+        String ludo = "Ludo";
+        String ariant = "Ariant";
+        Assert.assertNull(test2.checkNull(ludo, ariant));
     }
 }

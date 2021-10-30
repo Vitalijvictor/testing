@@ -1,0 +1,66 @@
+1 - Travis Ci -> .travis.yml -> paste:
+
+language: java
+
+jdk:
+  - openjdk14
+
+sudo: false
+
+env:
+  global:
+    CODECOV_TOKEN='5ec78188-021d-4bcb-8eb6-5b94383b34ec'
+
+# после выполнения сборки запустить скрипт, который будет собирать статистику по JaCoCo
+# Здесь используется сторонний сервис https://codecov.io/
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email:
+    recipients:
+      - vitalijvictor@gmail.com
+    on_success: never # default: change
+    on_failure: always # default: always
+
+2 - JaCoCo:
+
+<plugin>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.8.7</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>prepare-agent</goal>
+            </goals>
+        </execution>
+        <execution>
+            <id>report</id>
+            <phase>test</phase>
+            <goals>
+                <goal>report</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+
+***reload mvn ->mvn install -> mvn validate.
+The target folder will appear, in this folder
+appear site
+folder, in the jacoco folder open the index.html
+in the browser.***
+
+
+QA Start. Урок 1. Методологии разработки и их влияние на качество
+Example: Cascade model
+
+SDLC - Software development life cycle
+
+SRS - System requirement specification / BRD - Business requirement documentation
+
+RCB - Release candidate build
+
+AC - Acceptance criteria
+
+AT - AC - Acceptance testing
